@@ -1,0 +1,18 @@
+
+# Created by https://www.gitignore.io/api/nim,git,code
+
+### Code ###
+# Visual Studio Code - https://code.visualstudio.com/
+.settings/
+.vscode/
+tsconfig.json
+jsconfig.json
+
+### Git ###
+*.orig
+
+### Nim ###
+nimcache/
+
+
+# End of https://www.gitignore.io/api/nim,git,code
