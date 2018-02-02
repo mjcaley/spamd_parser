@@ -74,3 +74,23 @@ proc newSpam*(spam : bool, score, threshold : float) : Spam =
 
 proc newUser*(username : string) : User =
   User(name : "User", username : username)
+
+
+method `$`*(h : Header) : string {.base} =
+  result = h.name & " : " & h.value
+
+method `$`*(c : Compress) : string =
+  result = c.name & " : " & $c.algorithm
+
+method `$`*(c : ContentLength) : string =
+  result = c.name & " : " & $c.length
+  
+method `$`*(d : DidRemove) : string =
+  result = d.name & " : " & $d.action
+
+when isMainModule:
+  let h = newHeader("Something", "Awesome")
+  echo $h
+
+  let c = newCompress(zlib)
+  echo $c
